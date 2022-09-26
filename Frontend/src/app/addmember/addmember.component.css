@@ -1,0 +1,20 @@
+.table {
+    font-size: 17px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.btn-primary {
+    background-color: cornflowerblue;
+  
+}
+
+.btn-danger {
+    background-color: rgb(236, 104, 104);
+ 
+}
+
+.table .form-control {
+    height: 50px;
+    font-size: medium;
+    font-family: Arial, Helvetica, sans-serif;
+}

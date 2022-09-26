@@ -1,0 +1,122 @@
+<app-navbar></app-navbar>
+  
+  <div class="container">
+    <input type="checkbox" id="flip">
+    <div class="cover">
+      <div class="front">
+        <img src="https://thumbs.dreamstime.com/b/online-application-registration-form-graphics-concept-75688264.jpg" alt="">
+        <div class="text">
+            <span class="text-1"><h3><b>WELCOME</b></h3><br> </span>
+            
+        </div>
+      </div>
+      <div class="back">
+        <img class="backImg" src="https://auth.aglasem.com/assets/img/register.jpg" alt="">
+        <div class="text">
+          <span class="text-1">Complete miles of journey <br> with one step</span>
+          <span class="text-2">Let's get started</span>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="forms">
+        <div class="form-content">
+          <div class="login-form">
+            <div class="title">Login</div>
+          <form #userRegister="ngForm" class="needs-validation" novalidate (ngSubmit)="userRegister.valid && Adduser()">
+            <div class="input-boxes">
+              <div class="input-box">
+                <i class="fas fa-envelope"></i>
+                <input type="text" placeholder="Enter your email" required pattern=".+@gmail.com">
+                <div class="invalid-feedback">
+                  Invalid Email
+                </div>
+              </div>
+              <div class="input-box">
+                <i class="fas fa-lock"></i>
+                <input type="password" placeholder="Enter your password" required minlength="6" maxlength="20">
+                <div class="invalid-feedback">
+                  Invalid Password
+                </div>
+              </div>
+              <div class="text"><a href="#">Forgot password?</a></div>
+              <div class="button input-box">
+                <input type="submit" value="Submit">
+              </div>
+              <div class="text sign-up-text">Don't have an account? <label for="flip">Sign Up Now</label></div>
+            </div>
+        </form>
+      </div>
+        <div class="signup-form">
+          <div class="title">Signup</div>
+        <form #userRegister="ngForm" class="needs-validation" novalidate >
+            <div class="input-boxes1">
+              <div class="input-box1">
+                <i class="fas fa-user"></i>
+                <input type="text" name="namefield" placeholder="username..." [(ngModel)]="user.userName" required minlength="6" maxlength="20">
+               <br><br>  <div class="invalid-feedback">
+                  should have atleast 6 characters
+                </div>
+              </div>
+
+              <div class="input-box1">
+                <i class="fas fa-envelope"></i>
+                Enter your address<textarea name="text" id="" cols="20" rows="2" [(ngModel)]="user.address" required minlength="10" maxlength="100"></textarea>
+                <br><br><div class="invalid-feedback">
+                  Address is required
+                </div>
+            </div>
+
+              <div class="input-box1">
+                <i class="fas fa-envelope"></i>
+                <input type="text" name="email" placeholder="email..." [(ngModel)]="user.email" required pattern=".+@gmail.com">
+                <br><br><div class="invalid-feedback">
+                  Invalid Email
+                </div>
+
+                <div class="input-box1">
+                  <i class="fas fa-envelope"></i>
+                  <input type="text" name="text" placeholder="phoneNo..." [(ngModel)]="user.phoneNo" required minlength="10" maxlength="10">
+                  <br><br><div class="invalid-feedback">
+                    Invalid Phone number
+                  </div>
+              </div>
+
+              <div class="input-box1">
+                <i class="fas fa-envelope"></i>
+                <input type="date" name="text" placeholder="Date of Birth" [(ngModel)]="user.dob" required minlength="4" maxlength="10">
+                <br><br><div class="invalid-feedback">
+                  Invalid date of birth
+                </div>
+              <div>
+
+              
+              <div class="input-box1">
+                <i class="fas fa-lock"></i>
+                <input type="password" name="password" placeholder="password..." [(ngModel)]="user.password" required minlength="6" maxlength="20">
+                <br><br><div class="invalid-feedback">
+                  Invalid Password
+                </div>
+              </div>
+              <div class="input-box1">
+                <i class="fas fa-lock"></i>
+                <input type="password" name="password" placeholder="confirm password..." [(ngModel)]="user.confirmPassword" #confirmpassword="ngModel" ngClass="{'is-invalid':register.submitted &&confirmPassword.errors'}" class="input" data-type="password" required>
+                <br><br><div class="invalid-feedback">
+                  Invalid Password
+                </div>
+              </div>
+              <div>
+                <div class="button input-box" *ngIf="userRegister.valid">
+                  <input type="submit" value="Submit" (click)="Adduser()">
+                </div>
+                <div class="button input-box"*ngIf="!userRegister.valid">
+                  <input type="submit" value="Submit">
+                </div>
+              </div>
+              <div class="text sign-up-text">Already have an account? <label for="flip">Login now</label></div>
+            </div>
+        
+    </div>
+
+
